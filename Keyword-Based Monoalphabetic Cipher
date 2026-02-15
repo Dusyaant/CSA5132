@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+
+void generateKey(char* kw, char* key) {
+    int map[26] = {0}, k = 0;
+    for (int i = 0; kw[i]; i++) {
+        if (!map[kw[i]-'A']) {
+            key[k++] = kw[i];
+            map[kw[i]-'A'] = 1;
+        }
+    }
+    for (int i = 0; i < 26; i++) {
+        if (!map[i]) key[k++] = i + 'A';
+    }
+    key[26] = '\0';
+}
+
+int main() {
+    char key[27];
+    generateKey("CIPHER", key);
+    printf("Generated Key: %s\n", key);
+    return 0;
+}
