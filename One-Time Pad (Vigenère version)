@@ -1,0 +1,9 @@
+#include <stdio.h>
+
+int main() {
+    int p[] = {18, 4, 13, 3, 12, 14, 17, 4, 12, 14, 13, 4, 24}; // "sendmoremoney"
+    int k[] = {9, 0, 1, 7, 23, 15, 21, 14, 11, 11, 2, 8, 9};
+    printf("Ciphertext indices: ");
+    for(int i=0; i<13; i++) printf("%d ", (p[i] + k[i]) % 26);
+    return 0;
+}
