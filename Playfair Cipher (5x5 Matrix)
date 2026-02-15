@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+void getCoords(char matrix[5][5], char c, int *r, int *c_idx) {
+    if (c == 'J') c = 'I';
+    for (int i = 0; i < 5; i++)
+        for (int j = 0; j < 5; j++)
+            if (matrix[i][j] == c) { *r = i; *c_idx = j; return; }
+}
+
+int main() {
+    char matrix[5][5] = { {'M','F','H','I','K'}, {'U','N','O','P','Q'}, 
+                          {'Z','V','W','X','Y'}, {'E','L','A','R','G'}, 
+                          {'D','S','T','B','C'} };
+    char p[] = "HELLOMSG"; // Example pair: HE LL OM SG
+    // Logic for Row/Col/Box shift goes here...
+    printf("Playfair implementation logic initialized.\n");
+    return 0;
+}
