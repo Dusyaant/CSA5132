@@ -1,0 +1,6 @@
+Theoretical Answer:
+a. Limitations on b: There are no limitations on 
+. Any integer 
+ works.
+b. Values of a not allowed: 
+ must be coprime to 26. Values not allowed are those that share a common factor with 26 (i.e., multiples of 2 or 13). Not allowed: 
