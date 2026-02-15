@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+void monoEncrypt(char* p, char* key) {
+    for (int i = 0; p[i] != '\0'; i++) {
+        if (isalpha(p[i])) {
+            int idx = toupper(p[i]) - 'A';
+            p[i] = isupper(p[i]) ? toupper(key[idx]) : tolower(key[idx]);
+        }
+    }
+}
+
+int main() {
+    char text[100], key[27] = "QWERTYUIOPASDFGHJKLZXCVBNM";
+    printf("Using Key: %s\n", key);
+    printf("Enter plaintext: ");
+    fgets(text, sizeof(text), stdin);
+    monoEncrypt(text, key);
+    printf("Ciphertext: %s", text);
+    return 0;
+}
